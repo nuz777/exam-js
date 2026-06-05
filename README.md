@@ -62,7 +62,13 @@ npm start
 ├── index.html              # Vite entry HTML
 ├── package.json            # scripts and dependencies
 ├── src/
-│   ├── main.js             # SPA routing, API calls, auth, CRUD and DOM rendering
+│   ├── config.js           # Shared constants such as API and storage keys
+│   ├── main.js             # Application bootstrap
+│   ├── controllers/        # Screen rendering and user-action handlers
+│   ├── router/             # Route table and hash router guard
+│   ├── services/           # API, session and theme persistence services
+│   ├── state/              # Global store and domain selectors
+│   ├── utils/              # DOM helpers, modal/toast utilities and formatters
 │   └── styles.css          # responsive UI, dashboard, modal, table and dark mode styles
 └── README.md
 ```
@@ -89,7 +95,8 @@ npm start
 ## Technical decisions
 
 - The app uses hash routing because it works in static hosting without server rewrite rules.
-- Route guards are centralized in `routes` and validate the authenticated user's role before rendering a view.
+- Route guards are centralized in `src/router/routes.js` and validate the authenticated user's role before rendering a view.
+- Controllers, services, router, state and utilities are split into folders so each module has a focused responsibility.
 - Session persistence supports both `localStorage` and `sessionStorage`; the login form lets the user choose persistent or browser-session storage.
 - All CRUD operations are performed with the Fetch API against json-server endpoints.
 - Seat availability is updated when reservations are created, edited or canceled to avoid overselling.
