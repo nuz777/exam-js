@@ -1,0 +1,21 @@
+{
+  "users": [
+    { "id": "u1", "name": "Admin Cinema", "email": "admin@cine.com", "password": "admin123", "role": "admin" },
+    { "id": "u2", "name": "Ana Perez", "email": "ana@cine.com", "password": "user123", "role": "user" },
+    { "id": "u3", "name": "Luis Gomez", "email": "luis@cine.com", "password": "user123", "role": "user" }
+  ],
+  "rooms": [
+    { "id": "r1", "name": "Sala Aurora", "capacity": 80, "type": "2D", "status": "Activa" },
+    { "id": "r2", "name": "Sala Nebula", "capacity": 120, "type": "3D", "status": "Activa" },
+    { "id": "r3", "name": "Sala Titan", "capacity": 150, "type": "IMAX", "status": "Activa" }
+  ],
+  "functions": [
+    { "id": "f1", "movie": "Dune: Part Two", "roomId": "r3", "date": "2026-06-08", "time": "19:30", "capacity": 150, "available": 142, "status": "Activa" },
+    { "id": "f2", "movie": "Inside Out 2", "roomId": "r1", "date": "2026-06-09", "time": "16:00", "capacity": 80, "available": 76, "status": "Activa" },
+    { "id": "f3", "movie": "The Batman", "roomId": "r2", "date": "2026-06-10", "time": "21:00", "capacity": 120, "available": 120, "status": "Cancelada" }
+  ],
+  "reservations": [
+    { "id": "res1", "userId": "u2", "functionId": "f1", "tickets": 3, "reservedAt": "2026-06-01T14:20:00.000Z", "status": "Confirmada" },
+    { "id": "res2", "userId": "u3", "functionId": "f2", "tickets": 2, "reservedAt": "2026-06-02T17:40:00.000Z", "status": "Pendiente" }
+  ]
+}
